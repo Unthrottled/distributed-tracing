@@ -1,0 +1,11 @@
+server:
+    port: ${PORT:10004}
+
+spring:
+  application:
+    name: service-charlie
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:10001}/eureka/
