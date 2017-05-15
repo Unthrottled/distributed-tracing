@@ -29,6 +29,7 @@ ext {
 }
 
 dependencies {
+	runtime('io.zipkin.java:zipkin-autoconfigure-ui')
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
 	compile('org.springframework.cloud:spring-cloud-starter-eureka')
