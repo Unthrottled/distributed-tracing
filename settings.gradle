@@ -1,1 +1,1 @@
-include 'consul-server', 'service-alpha'
+include 'eureka-server', 'service-alpha'
