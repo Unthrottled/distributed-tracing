@@ -1,3 +1,3 @@
-include 'eureka-server', 'service-alpha',
+include 'eureka-server', 'service-alpha','alpha-client',
         'service-bravo', 'service-charlie',
         'service-zulu', 'zipkin-server'

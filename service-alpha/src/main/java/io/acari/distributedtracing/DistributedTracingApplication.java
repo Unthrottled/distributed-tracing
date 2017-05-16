@@ -34,6 +34,8 @@ class RestGuy {
 
 	@RequestMapping("/")
 	public List<String> get(){
-		return discoStu.getServices();
+		List<String> services = discoStu.getServices();
+		services.add("Piss Off.");
+		return services;
 	}
 }
