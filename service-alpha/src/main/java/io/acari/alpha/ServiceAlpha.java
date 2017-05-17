@@ -13,6 +13,8 @@ import org.springframework.cloud.stream.messaging.Source;
 @EnableBinding(Source.class)
 public class ServiceAlpha {
     private static final Logger log = LoggerFactory.getLogger(ServiceAlpha.class);
+    public static final String BRAVO_NAME = "service-bravo";
+    public static final String CHARLIE_NAME = "service-charlie";
 
     public static void main(String[] args) {
         SpringApplication.run(ServiceAlpha.class, args);

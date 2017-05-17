@@ -8,6 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class ServiceCharlie {
 
+    public static final String ZULU_NAME = "service-zulu";
+
     public static void main(String[] args) {
         SpringApplication.run(ServiceCharlie.class, args);
     }
