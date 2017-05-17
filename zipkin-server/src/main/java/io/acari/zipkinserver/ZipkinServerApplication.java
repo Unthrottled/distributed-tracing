@@ -9,20 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Properties;
 
-@EnableDiscoveryClient
 @EnableZipkinStreamServer
 @SpringBootApplication
 public class ZipkinServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ZipkinServerApplication.class, args);
-	}
-}
-
-@RestController
-class Resto{
-	@RequestMapping("/")
-	public Properties getProp(){
-		return System.getProperties();
 	}
 }
