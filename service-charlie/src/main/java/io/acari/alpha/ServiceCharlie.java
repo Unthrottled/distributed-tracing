@@ -12,10 +12,10 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class DistributedTracingApplication {
+public class ServiceCharlie {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DistributedTracingApplication.class, args);
+		SpringApplication.run(ServiceCharlie.class, args);
 	}
 
 
