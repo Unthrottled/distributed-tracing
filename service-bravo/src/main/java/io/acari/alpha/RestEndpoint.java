@@ -23,7 +23,7 @@ class RestEndpoint {
     @RequestMapping("/")
     public List<String> get() {
         List<String> services = discoStu.getServices();
-        messagingSource.sendMessage("Alpha Stream Sending " + services + " @ " + Instant.now());
+        messagingSource.sendMessage("Bravo Stream Sending " + services + " @ " + Instant.now());
         return services;
     }
 }
