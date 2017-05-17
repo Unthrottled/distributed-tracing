@@ -14,9 +14,9 @@ spring:
       bindings:
         output:
           destination: alphaStream
-        inputBravo:
+        bravoInput:
           destination: bravoStream
-        inputCharlie:
+        charlieInput:
           destination: charlieStream
 
 
