@@ -31,7 +31,6 @@ ext {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.springframework.boot:spring-boot-starter-web-services')
 	compile('org.springframework.cloud:spring-cloud-sleuth-stream')
 	compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
 	compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
