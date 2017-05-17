@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.ws.rs.core.MediaType;
 
 @FeignClient(serviceId = ServiceAlpha.CHARLIE_NAME)
-interface CharlieRestClient {
+public interface CharlieRestClient {
     @RequestMapping(method = RequestMethod.GET, value = "/", consumes = MediaType.APPLICATION_JSON)
     String fetchMessageYo();
 }

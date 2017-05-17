@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.ws.rs.core.MediaType;
 
 @FeignClient(serviceId = ServiceAlpha.BRAVO_NAME)
-interface BravoRestClient {
+public interface BravoRestClient {
     @RequestMapping(method = RequestMethod.GET, value = "/", consumes = MediaType.APPLICATION_JSON)
     String fetchMessageYo();
 }
