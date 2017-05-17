@@ -1,5 +1,6 @@
-package io.acari.service;
+package io.acari.service.alpha.bravo;
 
+import io.acari.service.alpha.ServiceAlpha;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

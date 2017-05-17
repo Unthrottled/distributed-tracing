@@ -1,4 +1,4 @@
-package io.acari.service;
+package io.acari.service.alpha;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -23,7 +23,7 @@ class RestEndpoint {
     @RequestMapping("/")
     public List<String> get() {
         List<String> services = discoStu.getServices();
-        messagingSource.sendMessage("Charlie Stream Sending " + services + " @ " + Instant.now());
+        messagingSource.sendMessage("Alpha Stream Sending " + services + " @ " + Instant.now());
         return services;
     }
 }

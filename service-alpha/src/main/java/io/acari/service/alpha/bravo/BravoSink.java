@@ -1,4 +1,4 @@
-package io.acari.service;
+package io.acari.service.alpha.bravo;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;

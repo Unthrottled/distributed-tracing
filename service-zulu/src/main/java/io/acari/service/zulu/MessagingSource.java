@@ -1,4 +1,4 @@
-package io.acari.service;
+package io.acari.service.zulu;
 
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.integration.annotation.Gateway;

@@ -1,4 +1,4 @@
-package io.acari.service;
+package io.acari.service.charlie;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
