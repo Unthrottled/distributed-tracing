@@ -13,7 +13,7 @@ spring:
       stream:
         bindings:
           input:
-            destination: messages
+            destination: alphaStream
 
 eureka:
     client:

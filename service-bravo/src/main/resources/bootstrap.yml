@@ -4,6 +4,16 @@ server:
 spring:
   application:
     name: service-bravo
+  zipkin:
+      baseurl: http://127.0.0.1:10006
+  sleuth:
+      sampler:
+        percentage: 1
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: bravoStream
 
 eureka:
     client:

@@ -13,7 +13,11 @@ spring:
     stream:
       bindings:
         output:
-          destination: messages
+          destination: alphaStream
+        inputBravo:
+          destination: bravoStream
+        inputCharlie:
+          destination: charlieStream
 
 
 eureka:
