@@ -24,7 +24,6 @@ repositories {
 	mavenLocal()
 }
 
-
 ext {
 	springCloudVersion = 'Dalston.RELEASE'
 }

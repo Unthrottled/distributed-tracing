@@ -1,4 +1,4 @@
-package io.acari.distributedtracing;
+package io.acari.alpha;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
