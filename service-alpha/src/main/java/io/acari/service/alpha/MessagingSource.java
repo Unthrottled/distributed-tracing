@@ -5,7 +5,7 @@ import org.springframework.integration.annotation.Gateway;
 import org.springframework.integration.annotation.MessagingGateway;
 
 @MessagingGateway
-interface MessagingSource {
+public interface MessagingSource {
     @Gateway(requestChannel = Source.OUTPUT)
     void sendMessage(String message);
 }
