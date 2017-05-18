@@ -14,8 +14,8 @@ import org.springframework.cloud.stream.messaging.Source;
 @EnableDiscoveryClient
 @EnableBinding({Source.class, BravoSink.class, CharlieSink.class})
 public class AlphaService {
-    public static final String BRAVO_NAME = "service-bravo";
-    public static final String CHARLIE_NAME = "service-charlie";
+    public static final String BRAVO_NAME = "bravo-service";
+    public static final String CHARLIE_NAME = "charlie-service";
 
     public static void main(String[] args) {
         SpringApplication.run(AlphaService.class, args);
