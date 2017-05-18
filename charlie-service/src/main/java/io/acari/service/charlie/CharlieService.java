@@ -12,12 +12,12 @@ import org.springframework.cloud.stream.messaging.Source;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableBinding({Sink.class, Source.class})
-public class ServiceCharlie {
+public class CharlieService {
 
     public static final String ZULU_NAME = "service-zulu";
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceCharlie.class, args);
+        SpringApplication.run(CharlieService.class, args);
     }
 
 }
