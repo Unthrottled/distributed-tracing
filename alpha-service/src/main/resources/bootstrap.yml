@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service-alpha
+    name: alpha-service
   zipkin:
     baseurl: http://127.0.0.1:10006
   sleuth:
