@@ -16,7 +16,6 @@ import org.springframework.cloud.stream.messaging.Source;
 @EnableDiscoveryClient
 @EnableBinding({Source.class, BravoSink.class, CharlieSink.class})
 public class ServiceAlpha {
-    private static final Logger log = LoggerFactory.getLogger(ServiceAlpha.class);
     public static final String BRAVO_NAME = "service-bravo";
     public static final String CHARLIE_NAME = "service-charlie";
 
