@@ -10,7 +10,7 @@ import org.springframework.integration.annotation.ServiceActivator;
 
 @MessageEndpoint
 public class BravoMessageSink {
-    Log log = LogFactory.getLog(CharlieMessageSink.class);
+    private static final Log log = LogFactory.getLog(CharlieMessageSink.class);
     private MessagingSource messagingSource;
 
     @Autowired
@@ -20,8 +20,7 @@ public class BravoMessageSink {
 
     @ServiceActivator(inputChannel = BravoSink.INPUT)
     public void acceptMessage(String message) {
-        String messageToSend = "Bravo Stream on Alpha Service got message: " + message;
-        this.log.info(messageToSend);
-        this.messagingSource.sendMessage(messageToSend);
+        log.info("Alpha Service, Bravo Stream Sink got message: " + message);
+        this.messagingSource.sendMessage(message);
     }
 }

@@ -14,7 +14,7 @@ import java.util.concurrent.Future;
 
 @RestController
 class RestEndpoint {
-
+    //TODO: add http:// thing for zipkin log
     private MessagingSource messagingSource;
     private BravoRestClient bravoRestClient;
     private CharlieRestClient charlieRestClient;

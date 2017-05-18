@@ -11,7 +11,7 @@ public class MessageSink {
     private static final Log log = LogFactory.getLog(MessageSink.class);
 
     @ServiceActivator(inputChannel = Sink.INPUT)
-    public void acceptMessage(String message){
-        log.info("Alpha Client Sink got message: " + message);
+    public void acceptMessage(String message) {
+        log.info("Alpha Client, Alpha Stream Sink got message: " + message);
     }
 }

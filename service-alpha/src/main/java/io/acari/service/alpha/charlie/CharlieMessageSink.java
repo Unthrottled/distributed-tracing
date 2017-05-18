@@ -9,7 +9,7 @@ import org.springframework.integration.annotation.ServiceActivator;
 
 @MessageEndpoint
 public class CharlieMessageSink {
-    Log log = LogFactory.getLog(CharlieMessageSink.class);
+    private static final Log log = LogFactory.getLog(CharlieMessageSink.class);
 
     private MessagingSource messagingSource;
 
@@ -19,9 +19,8 @@ public class CharlieMessageSink {
     }
 
     @ServiceActivator(inputChannel = CharlieSink.INPUT)
-    public void acceptMessage(String message){
-        String messageToSend = "Charlie Stream on Alpha Service got message: " + message;
-        this.log.info(messageToSend);
-        this.messagingSource.sendMessage(messageToSend);
+    public void acceptMessage(String message) {
+        log.info("Alpha Service, Charlie Stream Sink got message: " + message);
+        this.messagingSource.sendMessage(message);
     }
 }
