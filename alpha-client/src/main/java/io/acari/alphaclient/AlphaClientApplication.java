@@ -33,7 +33,7 @@ public class AlphaClientApplication {
 
 @MessageEndpoint
 class MessageSink {
-	Log log = LogFactory.getLog(MessageSink.class);
+	private static final Log log = LogFactory.getLog(MessageSink.class);
 
 	@ServiceActivator(inputChannel = Sink.INPUT)
 	public void acceptMessage(String message){
@@ -48,7 +48,7 @@ interface RestClient {
 }
 
 @RestController
-@RequestMapping("/message")
+@RequestMapping("/get")
 class ClientRestController {
 	private RestClient restClient;
 
@@ -57,7 +57,7 @@ class ClientRestController {
 		this.restClient = restClient;
 	}
 
-	@RequestMapping("/client")
+	@RequestMapping("/message")
 	ResponseEntity<String> callService(){
 		return ResponseEntity.ok(restClient.getMessageYo());
 	}

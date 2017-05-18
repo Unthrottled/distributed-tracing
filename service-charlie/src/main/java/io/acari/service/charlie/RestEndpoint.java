@@ -12,23 +12,20 @@ import java.util.List;
 @RestController
 class RestEndpoint {
 
-    private DiscoveryClient discoStu;
     private MessagingSource messagingSource;
     private ZuluRestClient zuluRestClient;
 
     @Autowired
-    public RestEndpoint(DiscoveryClient discoStu, MessagingSource messagingSource, ZuluRestClient zuluRestClient) {
-        this.discoStu = discoStu;
+    public RestEndpoint(MessagingSource messagingSource, ZuluRestClient zuluRestClient) {
         this.messagingSource = messagingSource;
         this.zuluRestClient = zuluRestClient;
     }
 
     @RequestMapping("/")
     public ResponseEntity<String> get() {
-        List<String> services = discoStu.getServices();
         String zuluMessage = zuluRestClient.fetchMessageYo();
-        String message = services + " @ " + Instant.now() + " " + zuluMessage;
-        messagingSource.sendMessage("Charlie Stream Sending " + message);
-        return ResponseEntity.ok("Charlie REST Sending " + message);
+        String charlieMessage = "Hello from Charlie Service @ " + Instant.now() + " and " + zuluMessage;
+        messagingSource.sendMessage(charlieMessage);
+        return ResponseEntity.ok(charlieMessage);
     }
 }

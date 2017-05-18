@@ -15,16 +15,14 @@ import java.util.concurrent.Future;
 @RestController
 class RestEndpoint {
 
-    private DiscoveryClient discoStu;
     private MessagingSource messagingSource;
     private BravoRestClient bravoRestClient;
     private CharlieRestClient charlieRestClient;
     private PoorMansExecutor poorMansExecutor;
 
     @Autowired
-    public RestEndpoint(DiscoveryClient discoStu, MessagingSource messagingSource,
+    public RestEndpoint(MessagingSource messagingSource,
                         BravoRestClient bravoRestClient, CharlieRestClient charlieRestClient, PoorMansExecutor poorMansExecutor) {
-        this.discoStu = discoStu;
         this.messagingSource = messagingSource;
         this.bravoRestClient = bravoRestClient;
         this.charlieRestClient = charlieRestClient;
@@ -33,13 +31,13 @@ class RestEndpoint {
 
     @RequestMapping("/")
     public ResponseEntity<String> get() throws Exception {
-        List<String> services = discoStu.getServices();
         Future<String> bravoMessage = poorMansExecutor.submit(bravoRestClient::fetchMessageYo);
         Future<String> charlieMessage = poorMansExecutor.submit(charlieRestClient::fetchMessageYo);
         String bravoFetchedMethod = bravoMessage.get();
         String fetchedCharlieMethod = charlieMessage.get();
-        String message = services + " @ " + Instant.now() + bravoFetchedMethod + fetchedCharlieMethod;
-        messagingSource.sendMessage("Alpha Stream Sending " + message);
-        return ResponseEntity.ok("Alpha REST Sending " + message);
+        String alphaMessage = "Hello from Alpha Service @ " + Instant.now() +
+                " and " + bravoFetchedMethod + " and " + fetchedCharlieMethod;
+        messagingSource.sendMessage(alphaMessage);
+        return ResponseEntity.ok(alphaMessage);
     }
 }

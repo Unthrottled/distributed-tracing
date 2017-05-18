@@ -6,7 +6,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @Configuration
 @EnableAsync
-public class AppConfig {
+public class AlphaConfig {
 
     /**
      * An Executor Service would have been sufficient.
