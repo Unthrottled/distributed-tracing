@@ -8,6 +8,6 @@ import javax.ws.rs.core.MediaType;
 
 @FeignClient(serviceId = AlphaClientApplication.SERVICE_NAME)
 public interface AlphaRestClient {
-    @RequestMapping(method = RequestMethod.GET, value = "/", consumes = MediaType.APPLICATION_JSON)
+    @RequestMapping(method = RequestMethod.GET, value = "/alpha", consumes = MediaType.APPLICATION_JSON)
     String getMessageYo();
 }

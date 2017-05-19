@@ -14,22 +14,18 @@ import java.util.concurrent.Future;
 
 @RestController
 class RestEndpoint {
-    //TODO: add http:// thing for zipkin log
-    private MessagingSource messagingSource;
     private BravoRestClient bravoRestClient;
     private CharlieRestClient charlieRestClient;
     private PoorMansExecutor poorMansExecutor;
 
     @Autowired
-    public RestEndpoint(MessagingSource messagingSource,
-                        BravoRestClient bravoRestClient, CharlieRestClient charlieRestClient, PoorMansExecutor poorMansExecutor) {
-        this.messagingSource = messagingSource;
+    public RestEndpoint(BravoRestClient bravoRestClient, CharlieRestClient charlieRestClient, PoorMansExecutor poorMansExecutor) {
         this.bravoRestClient = bravoRestClient;
         this.charlieRestClient = charlieRestClient;
         this.poorMansExecutor = poorMansExecutor;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/alpha")
     public ResponseEntity<String> get() throws Exception {
         Future<String> bravoMessage = poorMansExecutor.submit(bravoRestClient::fetchMessageYo);
         Future<String> charlieMessage = poorMansExecutor.submit(charlieRestClient::fetchMessageYo);
@@ -37,7 +33,6 @@ class RestEndpoint {
         String fetchedCharlieMethod = charlieMessage.get();
         String alphaMessage = "Hello from Alpha Service @ " + Instant.now() +
                 " and " + bravoFetchedMethod + " and " + fetchedCharlieMethod;
-        messagingSource.sendMessage(alphaMessage);
         return ResponseEntity.ok(alphaMessage);
     }
 }

@@ -9,6 +9,6 @@ import javax.ws.rs.core.MediaType;
 
 @FeignClient(serviceId = AlphaService.CHARLIE_NAME)
 public interface CharlieRestClient {
-    @RequestMapping(method = RequestMethod.GET, value = "/", consumes = MediaType.APPLICATION_JSON)
+    @RequestMapping(method = RequestMethod.GET, value = "/charlie", consumes = MediaType.APPLICATION_JSON)
     String fetchMessageYo();
 }

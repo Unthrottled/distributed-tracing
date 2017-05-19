@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 @FeignClient(serviceId = AlphaService.BRAVO_NAME)
 public interface BravoRestClient {
-    @RequestMapping(method = RequestMethod.GET, value = "/", consumes = MediaType.APPLICATION_JSON)
+    @RequestMapping(method = RequestMethod.GET, value = "/bravo", consumes = MediaType.APPLICATION_JSON)
     String fetchMessageYo();
 }
 

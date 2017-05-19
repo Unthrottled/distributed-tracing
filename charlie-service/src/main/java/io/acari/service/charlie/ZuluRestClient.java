@@ -8,6 +8,6 @@ import javax.ws.rs.core.MediaType;
 
 @FeignClient(serviceId = CharlieService.ZULU_NAME)
 interface ZuluRestClient {
-    @RequestMapping(method = RequestMethod.GET, value = "/", consumes = MediaType.APPLICATION_JSON)
+    @RequestMapping(method = RequestMethod.GET, value = "/zulu", consumes = MediaType.APPLICATION_JSON)
     String fetchMessageYo();
 }
