@@ -12,7 +12,7 @@ import org.springframework.cloud.stream.messaging.Sink;
 @SpringBootApplication
 @EnableBinding(Sink.class)
 public class AlphaClientApplication {
-    public static final String SERVICE_NAME = "alpha-client";
+    public static final String SERVICE_NAME = "alpha-service";
 
     public static void main(String[] args) {
         SpringApplication.run(AlphaClientApplication.class, args);
