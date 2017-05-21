@@ -16,7 +16,7 @@ class ClientRestController {
     }
 
     @RequestMapping("/message")
-    ResponseEntity<String> callService(){
+    ResponseEntity<String> callService() {
         return ResponseEntity.ok(alphaRestClient.getMessageYo());
     }
 

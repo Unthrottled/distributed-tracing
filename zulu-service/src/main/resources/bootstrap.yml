@@ -9,11 +9,6 @@ spring:
   sleuth:
     sampler:
       percentage: 1
-  cloud:
-    stream:
-      bindings:
-        output:
-          destination: zuluStream
 
 eureka:
     client:

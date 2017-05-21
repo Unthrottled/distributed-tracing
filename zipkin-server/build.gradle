@@ -1,14 +1,14 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.3.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-		mavenLocal()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -19,25 +19,25 @@ version = '0.0.1'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
-	mavenLocal()
+    mavenCentral()
+    mavenLocal()
 }
 
 
 ext {
-	springCloudVersion = 'Dalston.RELEASE'
+    springCloudVersion = 'Dalston.RELEASE'
 }
 
 dependencies {
-	runtime('io.zipkin.java:zipkin-autoconfigure-ui')
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
-	compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    runtime('io.zipkin.java:zipkin-autoconfigure-ui')
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

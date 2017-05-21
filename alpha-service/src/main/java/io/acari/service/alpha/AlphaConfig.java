@@ -15,7 +15,7 @@ public class AlphaConfig {
      * bean that uses the PoorMansExecutor.
      */
     @Bean
-    public PoorMansExecutor poorMansExecutor(){
+    public PoorMansExecutor poorMansExecutor() {
         return new PoorMansExecutor();
     }
 

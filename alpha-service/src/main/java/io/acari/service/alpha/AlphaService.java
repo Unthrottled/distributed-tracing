@@ -1,18 +1,13 @@
 package io.acari.service.alpha;
 
-import io.acari.service.alpha.bravo.BravoSink;
-import io.acari.service.alpha.charlie.CharlieSink;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.messaging.Source;
 
 @EnableFeignClients
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableBinding({Source.class, BravoSink.class, CharlieSink.class})
 public class AlphaService {
     public static final String BRAVO_NAME = "bravo-service";
     public static final String CHARLIE_NAME = "charlie-service";
