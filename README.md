@@ -70,22 +70,42 @@ This is the following resource:
 Lastly we end with Zulu Service, which is-wait for it-in the "zulu-service" directory.
 Big surprise!!
 Much like Bravo Service, it has no external dependencies.
-Exposing an HTTP GET REST api on port 10005 (I made these first).
+Exposing an HTTP GET REST api on port 10005 (I made these first, see the pattern in the ports?).
 This is the following resource:
     
     http://localhost:10005/zulu
 
 
-Which should have a trace that looks like this:
+To run any server in this repository just do the following.
+1. Open a command line with the server you want to start as the present working directory (PWD)
+1. Run 'gradle bootRun'.
 
-![trace](images/trace.png)
+I would start the servers in the following order.
 
-To run the example.
-1. Open a terminal whose current working directory is the zipkin-server directory of this repository.
-1. Run `gradle bootRun`
-1. Open a terminal whose current working directory is the async-rest directory of this repository.
-1. Run `gradle bootRun`
-1. Open a web browser and enter the following address: `http://localhost:7866`
+1. Zipkin
+1. Eureka
+1. Alpha Client
+1. Alpha Service
+1. Bravo Service
+1. Charlie Service
+1. Zulu Service
+
+Once all of the servers are running, and if you have enough memory left to start a web browser.
+Put the following in you address an run 
+
+    http://localhost:10010/get/message
+    
+Alternatively you could run a curl command:
+
+    curl localhost:100010/get/message
+    
+You might get a 500 error once or twice.
+This is [Hystrix](https://github.com/Netflix/Hystrix) in action, timing out the Feign client request.
+I assume that when the first request come in, the application was not warmed up.
+
+It takes a couple tries:
+
+![hold onto your butts](images/hotyb.jpg)
 
 This should output something like this to the browser window
     
@@ -93,10 +113,13 @@ This should output something like this to the browser window
 
 You should now be able to access the Zipkin UI, and have at least one trace, in a browser window as well at `http://localhost:7865/`
 
-
+![trace](images/trace.png)
 
 Provided that the "End Time" parameter of the trace query is at or after the time you made your browser requests, you should get something that looks like this!
 
+It should also give a neat directed dependency graph!
+
+![dependency graph](images/dependency-tree.png)
 
 
 Enjoy!
