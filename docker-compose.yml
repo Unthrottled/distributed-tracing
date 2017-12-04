@@ -1,0 +1,6 @@
+version: "3"
+services:
+  alpha-client:
+    build:
+      context: ./alpha-client
+    image: alexsimons/dt-alpha-client:1.0.0

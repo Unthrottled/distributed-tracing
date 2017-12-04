@@ -13,5 +13,6 @@ FROM java:8u111-alpine
 
 WORKDIR /app
 
+COPY --from=packager /app/build/libs /app
 
-ENTRYPOINT ["java", "-Xmx512M", "-XX:MaxPermSize=384M", "-XX:+CMSClassUnloadingEnable", "-jar", "app-1.0.0.jar"]
+ENTRYPOINT ["java", "-Xmx512M", "-XX:MaxPermSize=384M", "-jar", "app-1.0.0.jar"]
