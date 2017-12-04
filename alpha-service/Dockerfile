@@ -7,7 +7,7 @@ WORKDIR /app
 #Add rest of source code :)
 ADD . .
 
-RUN gradle clean bootJar
+RUN gradle clean bootRepackage
 
 FROM java:8u111-alpine
 
