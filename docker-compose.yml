@@ -4,3 +4,39 @@ services:
     build:
       context: ./alpha-client
     image: alexsimons/dt-alpha-client:1.0.0
+    depends_on:
+      - eureka
+  alpha-service:
+    build:
+      context: ./alpha-service
+    image: alexsimons/dt-alpha-service:1.0.0
+    depends_on:
+      - eureka
+  bravo-service:
+    build:
+      context: ./bravo-service
+    image: alexsimons/dt-bravo-service:1.0.0
+    depends_on:
+      - eureka
+  charlie-service:
+    build:
+      context: ./charlie-service
+    image: alexsimons/dt-charlie-service:1.0.0
+    depends_on:
+      - eureka
+  zulu-service:
+    build:
+      context: ./zulu-service
+    image: alexsimons/dt-zulu-service:1.0.0
+    depends_on:
+      - eureka
+  eureka:
+    build:
+      context: ./eureka-server
+    image: alexsimons/dt-eureka-server:1.0.0
+    depends_on:
+      - zipkin
+  zipkin:
+    build:
+      context: ./zipkin-server
+    image: alexsimons/dt-zipkin-server:1.0.0
