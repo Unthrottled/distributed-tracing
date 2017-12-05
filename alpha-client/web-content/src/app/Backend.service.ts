@@ -1,8 +1,8 @@
 
-import {Injectable} from "angular";
 import {HttpClient} from "@angular/common/http"
 import {Observable} from "rxjs/Observable";
 import {Message} from "./Message.model";
+import {Injectable} from "@angular/core";
 
 @Injectable()
 export class BackendService {

@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AppComponent} from "./app.component";
 import {HttpModule} from "@angular/http";
 import {BackendService} from "./Backend.service";
+import {HttpClientModule} from "@angular/common/http"
 
 
 
@@ -15,6 +16,7 @@ import {BackendService} from "./Backend.service";
         BrowserModule,
         FormsModule,
         HttpModule,
+        HttpClientModule,
         BrowserAnimationsModule
     ],
     exports: [

@@ -13,6 +13,8 @@ var router_1 = require("@angular/router");
 var animations_1 = require("@angular/platform-browser/animations");
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
+var Backend_service_1 = require("./Backend.service");
+var http_2 = require("@angular/common/http");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,6 +24,7 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
+                http_2.HttpClientModule,
                 animations_1.BrowserAnimationsModule
             ],
             exports: [
@@ -31,7 +34,7 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent
             ],
             bootstrap: [app_component_1.AppComponent],
-            providers: []
+            providers: [Backend_service_1.BackendService]
         })
     ], AppModule);
     return AppModule;
