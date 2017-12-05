@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {AppComponent} from "./app.component";
 import {HttpModule} from "@angular/http";
+import {BackendService} from "./Backend.service";
 
 
 
@@ -23,7 +24,7 @@ import {HttpModule} from "@angular/http";
         AppComponent
     ],
     bootstrap: [AppComponent],
-    providers: []
+    providers: [BackendService]
 })
 export class AppModule {
 }

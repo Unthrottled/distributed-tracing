@@ -8,16 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 require("./app.component.htm");
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'angular-application',
+            template: require('./app.component.htm')
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'angular-application',
-        template: require('./app.component.htm')
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
