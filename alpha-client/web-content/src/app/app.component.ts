@@ -17,7 +17,8 @@ export class AppComponent {
 
     public fetchMessage(): void {
         this.backendService.fetchMessage()
-            .subscribe(oneMessage=> this.messages.push(oneMessage));
+            .subscribe(oneMessage=> this.messages.push(oneMessage),
+                (e)=>this.messages.push(new Message("IT BROKE, SO SORRY, TRY AGAIN.")));
     }
 
     public clearMessages(): void {

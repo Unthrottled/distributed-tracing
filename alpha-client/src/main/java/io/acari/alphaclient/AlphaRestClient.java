@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.ws.rs.core.MediaType;
 
-@FeignClient(serviceId = AlphaClientApplication.SERVICE_NAME)
+@FeignClient(serviceId = AlphaClientApplication.SERVICE_NAME,
+    fallback = AlphaClientFallBack.class)
 public interface AlphaRestClient {
     @RequestMapping(method = RequestMethod.GET, value = "/alpha", consumes = MediaType.APPLICATION_JSON)
     String getMessageYo();
