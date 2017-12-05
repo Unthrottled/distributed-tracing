@@ -8,7 +8,7 @@ import {BackendService} from "./Backend.service";
     template: require('./app.component.htm')
 })
 export class AppComponent {
-    private messages: Message[] = [new Message('ayy lmao')];
+    private messages: Message[] = [];
 
 
     constructor(private backendService: BackendService) {

@@ -16,12 +16,12 @@ var Backend_service_1 = require("./Backend.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent(backendService) {
         this.backendService = backendService;
-        this.messages = [new Message_model_1.Message('ayy lmao')];
+        this.messages = [];
     }
     AppComponent.prototype.fetchMessage = function () {
         var _this = this;
         this.backendService.fetchMessage()
-            .subscribe(function (oneMessage) { return _this.messages.push(oneMessage); }, function (e) { return _this.messages.push(new Message_model_1.Message("IT BROKE, SO SORRY, TRY AGAIN.")); });
+            .subscribe(function (oneMessage) { return _this.messages.push(oneMessage); }, function (e) { return _this.messages.push(new Message_model_1.Message("Dayyuum, We had issuse even trying to talk to the backend! Try again, maybe it fixed itself.")); });
     };
     AppComponent.prototype.clearMessages = function () {
         this.messages = [];
