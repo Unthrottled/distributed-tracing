@@ -6,7 +6,10 @@
     <div class="message-container">
         <div class="messages">
             <ol>
-                <li *ngFor="let message of messages">{{message.value}}</li>
+                <li *ngFor="let message of messages"
+                    [class.success]="message.succeeded"
+                    [class.failure]="message.failed"
+                >{{message.value}}</li>
             </ol>
         </div>
     </div>
