@@ -1,11 +1,13 @@
-<div>
-    <div>
+<div class="app-container">
+    <div class="control-panel">
         <div class="btn-primary btn btn-lg" (click)="fetchMessage()">Fetch Message</div>
         <div class="btn-danger btn btn-lg" (click)="clearMessages()">Clear Messages</div>
     </div>
-    <div>
-        <ol>
-            <li *ngFor="let message of messages">{{message.value}}</li>
-        </ol>
+    <div class="message-container">
+        <div class="messages">
+            <ol>
+                <li *ngFor="let message of messages">{{message.value}}</li>
+            </ol>
+        </div>
     </div>
 </div>
