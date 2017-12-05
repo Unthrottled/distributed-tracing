@@ -1,1 +1,11 @@
-<h1>HELLO WERLD</h1>
+<div>
+    <div>
+        <div class="btn-primary btn btn-lg">Fetch Message</div>
+        <div class="btn-danger btn btn-lg">Clear Messages</div>
+    </div>
+    <div>
+        <ol>
+            <li *ngFor="let message of messages">{{message.value}}</li>
+        </ol>
+    </div>
+</div>
