@@ -4,6 +4,8 @@ services:
     build:
       context: ./alpha-client
     image: alexsimons/dt-alpha-client:1.0.0
+    ports:
+      - "10000:80"
     depends_on:
       - eureka
   alpha-service:
@@ -28,15 +30,21 @@ services:
     build:
       context: ./zulu-service
     image: alexsimons/dt-zulu-service:1.0.0
+    ports:
+      - "7865:7865"
     depends_on:
       - eureka
   eureka:
     build:
       context: ./eureka-server
     image: alexsimons/dt-eureka-server:1.0.0
+    ports:
+      - "10001:80"
     depends_on:
       - zipkin
   zipkin:
     build:
       context: ./zipkin-server
     image: alexsimons/dt-zipkin-server:1.0.0
+  rabbitmq:
+    image: rabbitmq:latest

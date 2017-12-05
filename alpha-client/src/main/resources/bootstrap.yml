@@ -2,10 +2,12 @@ server:
     port: 80
 
 spring:
+  rabbitmq:
+      host: rabbitmq
   application:
     name: alpha-client
   zipkin:
-    baseurl: http://zipkin-server
+    baseurl: http://zipkin
   sleuth:
     sampler:
       percentage: 1
@@ -13,4 +15,4 @@ spring:
 eureka:
     client:
         serviceUrl:
-            defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-server}/eureka/
+            defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka}/eureka/
