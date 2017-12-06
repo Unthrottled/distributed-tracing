@@ -1,0 +1,18 @@
+<div class="app-container">
+    <div class="control-panel">
+        <div class="btn-primary btn btn-lg" (click)="fetchMessage()">Fetch Message</div>
+        <div class="btn-danger btn btn-lg" (click)="clearMessages()">Clear Messages</div>
+        <a href="http://localhost:7865" target="_blank" class="btn btn-info btn-lg">View Zipkin UI</a>
+        <a href="http://localhost:10001" target="_blank" class="btn btn-lg btn-warning">View Eureka Dashboard</a>
+    </div>
+    <div class="message-container">
+        <div class="messages">
+            <ol>
+                <li *ngFor="let message of messages"
+                    [class.success]="message.succeeded"
+                    [class.failure]="message.failed"
+                >{{message.value}}</li>
+            </ol>
+        </div>
+    </div>
+</div>

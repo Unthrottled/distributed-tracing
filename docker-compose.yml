@@ -30,8 +30,6 @@ services:
     build:
       context: ./zulu-service
     image: alexsimons/dt-zulu-service:1.0.0
-    ports:
-      - "7865:7865"
     depends_on:
       - eureka
   eureka:
@@ -46,5 +44,9 @@ services:
     build:
       context: ./zipkin-server
     image: alexsimons/dt-zipkin-server:1.0.0
+    ports:
+        - "7865:80"
+    depends_on:
+      - rabbitmq
   rabbitmq:
     image: rabbitmq:latest
