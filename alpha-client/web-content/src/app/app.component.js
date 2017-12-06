@@ -21,7 +21,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.fetchMessage = function () {
         var _this = this;
         this.backendService.fetchMessage()
-            .subscribe(function (oneMessage) { return _this.messages.push(oneMessage); }, function (e) { return _this.messages.push(new Message_model_1.Message("Dayyuum, We had issuse even trying to talk to the backend! Try again, maybe it fixed itself.")); });
+            .subscribe(function (oneMessage) { return _this.messages.push(oneMessage); }, function (e) { return _this.messages.push(new Message_model_1.Message("Dayyuum, We had issuse even trying to talk to the backend! Try again, maybe it will fix itself.")); });
     };
     AppComponent.prototype.clearMessages = function () {
         this.messages = [];
