@@ -3,7 +3,7 @@
 This project demonstrates the capabilities of Zipkin's ability to tracing distributed Systems,  having requests go further than the initial server initially queried.
 Meaning that dependencies exist on several, distributed, servers.
 
-### Prequisites
+### Prerequisites
 
 To run the sample you will need:
  - Internet Connection (At least the first time it is run)
@@ -50,7 +50,7 @@ In this repository, the server will be running on port 80 but will be mapped to 
 Next, is a web server located in the "alpha-client" directory.
 This is Spring Boot application.
 It should probably be obvious that this will be consuming a Alpha Service (which will be discussed next).
-The application exposes a HTTP GET REST api on port 10010.
+The application exposes a HTTP GET REST api on port 10000.
 This is the following resource:
 
     http://localhost:10000/get/message
@@ -127,7 +127,7 @@ Alternatively you could run this curl command:
 
     curl -i localhost:10000/get/message
     
-You might get a 500 error once or twice.
+You might get a error message once or twice.
 This is [Hystrix](https://github.com/Netflix/Hystrix) in action, timing out the Feign client request.
 I assume that when the first request come in, the application was not warmed up.
 Whatever it may be, it is too slow for the default configuration for Hystrix.
@@ -136,7 +136,7 @@ It may take a couple tries so
 
 ![hold onto your butts](images/hotyb.jpg)
 
-This should output something like this to the browser window/command line
+This should output something like this to the browser window
     
 ![ui](images/up.png)
 
